@@ -106,6 +106,7 @@ ament_target_dependencies(
 
 add_executable(sick_generic_caller
         driver/src/sick_generic_caller.cpp
+        include/sick_scan/sick_generic_laser.h
         )
 
 ament_target_dependencies(
