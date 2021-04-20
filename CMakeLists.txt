@@ -70,6 +70,7 @@ if(BUILD_WITH_TEST_SERVER OR BUILD_WITH_TEST_SERVER MATCHES "true")
 endif()
 
 include_directories(include ${Boost_INCLUDE_DIR} ${LDMRS_INCLUDES} ${TEST_SERVER_INCLUDES})
+include_directories(include/sick_scan ${Boost_INCLUDE_DIR} ${LDMRS_INCLUDES} ${TEST_SERVER_INCLUDES})
 
 add_library(sick_scan2_lib
         driver/src/sick_generic_laser.cpp
@@ -107,6 +108,7 @@ ament_target_dependencies(
 add_executable(sick_generic_caller
         driver/src/sick_generic_caller.cpp
         include/sick_scan/sick_generic_laser.h
+        include/sick_scan/sick_scan_common_tcp.h
         )
 
 ament_target_dependencies(
